@@ -66,7 +66,9 @@ if CLIENT then
 	include ("interpolators/livelinearinterpolator.lua")
 	include ("interpolators/livesmoothinginterpolator.lua")
 	
-	include ("ui/controls.lua")
+	if GetConVar("is_gcompute_user"):GetBool() then
+	    include ("ui/controls.lua")
+    end
 end
 
 Gooey.CodeExporter = GLib.Lua.CodeExporter ("Gooey", "gooey")
