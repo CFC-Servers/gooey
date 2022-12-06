@@ -51,7 +51,11 @@ if CLIENT then
 			end
 		end
 		
-		vgui.Register (className, classTable, baseClassName)
+		GLib.CallDelayed (
+			function ()
+				vgui.Register (className, classTable, baseClassName)
+			end
+		)
 	end
 	
 	include ("clipboard.lua")

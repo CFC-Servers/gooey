@@ -1,181 +1,204 @@
 Gooey.UI = {}
 
--- Fonts
-include ("fonts.lua")
+local pieces = {
+	function()
+		-- Fonts
+		include ("gooey/ui/fonts.lua")
 
--- Layout
-include ("layout/orientation.lua")
-include ("layout/horizontalalignment.lua")
-include ("layout/verticalalignment.lua")
-include ("layout/sizingmethod.lua")
+		-- Layout
+		include ("gooey/ui/layout/orientation.lua")
+		include ("gooey/ui/layout/horizontalalignment.lua")
+		include ("gooey/ui/layout/verticalalignment.lua")
+		include ("gooey/ui/layout/sizingmethod.lua")
 
-include ("sortorder.lua")
-include ("splitcontainerpanel.lua")
+		include ("gooey/ui/sortorder.lua")
+		include ("gooey/ui/splitcontainerpanel.lua")
 
--- Images
-include ("imagecacheentry.lua")
-include ("imagecache.lua")
+		-- Images
+		include ("gooey/ui/imagecacheentry.lua")
+		include ("gooey/ui/imagecache.lua")
 
-include ("render.lua")
-include ("rendertype.lua")
+		include ("gooey/ui/render.lua")
+		include ("gooey/ui/rendertype.lua")
+	end,
 
--- Actions
-include ("action.lua")
-include ("actionmap.lua")
-include ("toggleaction.lua")
+	function()
 
-include ("booleancontroller.lua")
-include ("visibilitycontroller.lua")
+		-- Actions
+		include ("gooey/ui/action.lua")
+		include ("gooey/ui/actionmap.lua")
+		include ("gooey/ui/toggleaction.lua")
 
--- Mouse
-include ("mouse/mousemonitor.lua")
+		include ("gooey/ui/booleancontroller.lua")
+		include ("gooey/ui/visibilitycontroller.lua")
 
--- Event Bases
-include ("mouse/mouseevents.lua")
+		-- Mouse
+		include ("gooey/ui/mouse/mousemonitor.lua")
 
--- Keyboard
-include ("keyboard/keyboardmap.lua")
-include ("keyboard/keyboardmonitor.lua")
-include ("keyboard/escapekeyhandler.lua")
+		-- Event Bases
+		include ("gooey/ui/mouse/mouseevents.lua")
 
--- Bindings
-include ("keyboard/keybinds.lua")
+		-- Keyboard
+		include ("gooey/ui/keyboard/keyboardmap.lua")
+		include ("gooey/ui/keyboard/keyboardmonitor.lua")
+		include ("gooey/ui/keyboard/escapekeyhandler.lua")
 
--- Controllers
-include ("dragcontroller.lua")
-include ("dragdropcontroller.lua")
-include ("selectioncontroller.lua")
+		-- Bindings
+		include ("gooey/ui/keyboard/keybinds.lua")
 
-include ("iclipboardtarget.lua")
+		-- Controllers
+		include ("gooey/ui/dragcontroller.lua")
+		include ("gooey/ui/dragdropcontroller.lua")
+		include ("gooey/ui/selectioncontroller.lua")
 
--- Effects
-include ("alphacontroller.lua")
-include ("tickprovider.lua")
+		include ("gooey/ui/iclipboardtarget.lua")
 
--- Custom Text Renderers
-include ("textrenderer.lua")
-include ("silkicontextrenderer.lua")
+		-- Effects
+		include ("gooey/ui/alphacontroller.lua")
+		include ("gooey/ui/tickprovider.lua")
+	end,
 
--- Buttons
-include ("buttoncontroller.lua")
-include ("clipboardcontroller.lua")
-include ("savecontroller.lua")
+	function()
+		-- Custom Text Renderers
+		include ("gooey/ui/textrenderer.lua")
+		include ("gooey/ui/silkicontextrenderer.lua")
 
--- History
-include ("history/ihistorystack.lua")
+		-- Buttons
+		include ("gooey/ui/buttoncontroller.lua")
+		include ("gooey/ui/clipboardcontroller.lua")
+		include ("gooey/ui/savecontroller.lua")
 
-include ("history/historyitem.lua")
-include ("history/historystack.lua")
-include ("history/historycontroller.lua")
+		-- History
+		include ("gooey/ui/history/ihistorystack.lua")
 
-include ("history/undoredoitem.lua")
-include ("history/undoredostack.lua")
-include ("history/undoredocontroller.lua")
+		include ("gooey/ui/history/historyitem.lua")
+		include ("gooey/ui/history/historystack.lua")
+		include ("gooey/ui/history/historycontroller.lua")
 
-include ("vpanelcontainer.lua")
+		include ("gooey/ui/history/undoredoitem.lua")
+		include ("gooey/ui/history/undoredostack.lua")
+		include ("gooey/ui/history/undoredocontroller.lua")
 
--- Control Bases
-include ("controls/gbasepanel.lua")
+		include ("gooey/ui/vpanelcontainer.lua")
 
--- ListBox
-Gooey.ListBox = {}
-include ("controls/listbox/glistbox.lua")
-include ("controls/listbox/glistboxitem.lua")
-include ("controls/listbox/itemcollection.lua")
-include ("controls/listbox/listboxitem.lua")
-include ("controls/listbox/keyboardmap.lua")
+		-- Control Bases
+		include ("gooey/ui/controls/gbasepanel.lua")
+	end,
 
--- ListView
-Gooey.ListView = {}
-include ("controls/listview/glistview.lua")
-include ("controls/listview/glistviewcolumnheader.lua")
-include ("controls/listview/glistviewcolumnsizegrip.lua")
-include ("controls/listview/glistviewheader.lua")
-include ("controls/listview/glistviewitem.lua")
-include ("controls/listview/column.lua")
-include ("controls/listview/columncollection.lua")
-include ("controls/listview/columntype.lua")
-include ("controls/listview/itemcollection.lua")
-include ("controls/listview/keyboardmap.lua")
+	function()
+		-- ListBox
+		Gooey.ListBox = {}
+		include ("gooey/ui/controls/listbox/glistbox.lua")
+		include ("gooey/ui/controls/listbox/glistboxitem.lua")
+		include ("gooey/ui/controls/listbox/itemcollection.lua")
+		include ("gooey/ui/controls/listbox/listboxitem.lua")
+		include ("gooey/ui/controls/listbox/keyboardmap.lua")
+	end,
 
--- Menu
-include ("controls/menu/menu.lua")
-include ("controls/menu/basemenuitem.lua")
-include ("controls/menu/menuitem.lua")
-include ("controls/menu/menuseparator.lua")
-include ("controls/menu/visibilitycontrol.lua")
-include ("controls/menu/gmenu.lua")
-include ("controls/menu/gmenuitem.lua")
-include ("controls/menu/gmenuseparator.lua")
+	function()
+		-- ListView
+		Gooey.ListView = {}
+		include ("gooey/ui/controls/listview/glistview.lua")
+		include ("gooey/ui/controls/listview/glistviewcolumnheader.lua")
+		include ("gooey/ui/controls/listview/glistviewcolumnsizegrip.lua")
+		include ("gooey/ui/controls/listview/glistviewheader.lua")
+		include ("gooey/ui/controls/listview/glistviewitem.lua")
+		include ("gooey/ui/controls/listview/column.lua")
+		include ("gooey/ui/controls/listview/columncollection.lua")
+		include ("gooey/ui/controls/listview/columntype.lua")
+		include ("gooey/ui/controls/listview/itemcollection.lua")
+		include ("gooey/ui/controls/listview/keyboardmap.lua")
+	end,
 
--- Scrolling
-include ("scrollableviewcontroller.lua")
-include ("controls/gbasescrollbar.lua")
-include ("controls/ghscrollbar.lua")
-include ("controls/gvscrollbar.lua")
+	function()
+		-- Menu
+		include ("gooey/ui/controls/menu/menu.lua")
+		include ("gooey/ui/controls/menu/basemenuitem.lua")
+		include ("gooey/ui/controls/menu/menuitem.lua")
+		include ("gooey/ui/controls/menu/menuseparator.lua")
+		include ("gooey/ui/controls/menu/visibilitycontrol.lua")
+		include ("gooey/ui/controls/menu/gmenu.lua")
+		include ("gooey/ui/controls/menu/gmenuitem.lua")
+		include ("gooey/ui/controls/menu/gmenuseparator.lua")
 
--- Tooltips
-include ("controls/tooltips/tooltippositioningmode.lua")
-include ("controls/tooltips/tooltipcontroller.lua")
-include ("controls/tooltips/tooltipmanager.lua")
-include ("controls/tooltips/gtooltip.lua")
+		-- Scrolling
+		include ("gooey/ui/scrollableviewcontroller.lua")
+		include ("gooey/ui/controls/gbasescrollbar.lua")
+		include ("gooey/ui/controls/ghscrollbar.lua")
+		include ("gooey/ui/controls/gvscrollbar.lua")
 
--- Controls
-include ("controls/gbutton.lua")
-include ("controls/gcheckbox.lua")
-include ("controls/gcombobox.lua")
-include ("controls/gcomboboxitem.lua")
-include ("controls/gcomboboxx.lua")
-include ("controls/gcontainer.lua")
-include ("controls/geditablelabel.lua")
-include ("controls/gframe.lua")
-include ("controls/ggraph.lua")
-include ("controls/ggroupbox.lua")
-include ("controls/ghtml.lua")
-include ("controls/glabel.lua")
-include ("controls/glabelx.lua")
-include ("controls/gmenustrip.lua")
-include ("controls/gmenustripitem.lua")
-include ("controls/gmodelchoice.lua")
-include ("controls/gpanel.lua")
-include ("controls/gpanellist.lua")
-include ("controls/gprogressbar.lua")
-include ("controls/gresizegrip.lua")
-include ("controls/gscrollbarbutton.lua")
-include ("controls/gscrollbarcorner.lua")
-include ("controls/gscrollbargrip.lua")
-include ("controls/gsplitcontainer.lua")
-include ("controls/gsplitcontainersplitter.lua")
-include ("controls/gstatusbar.lua")
-include ("controls/gstatusbarcombobox.lua")
-include ("controls/gstatusbarpanel.lua")
-include ("controls/gstatusbarcomboboxpanel.lua")
-include ("controls/gtabcontrol.lua")
-include ("controls/gtextentry.lua")
-include ("controls/gtoolbar.lua")
-include ("controls/gtreeviewnode.lua")
-include ("controls/gtreeview.lua")
-include ("controls/gurllabel.lua")
-include ("controls/gworldview.lua")
-include ("controls/gverticallayout.lua")
+		-- Tooltips
+		include ("gooey/ui/controls/tooltips/tooltippositioningmode.lua")
+		include ("gooey/ui/controls/tooltips/tooltipcontroller.lua")
+		include ("gooey/ui/controls/tooltips/tooltipmanager.lua")
+		include ("gooey/ui/controls/tooltips/gtooltip.lua")
+	end,
 
-include ("controls/gvpanel.lua")
-include ("controls/gclosebutton.lua")
-include ("controls/gimage.lua")
-include ("controls/gtab.lua")
-include ("controls/gtabheader.lua")
-include ("controls/gtoolbaritem.lua")
-include ("controls/gtoolbarbutton.lua")
-include ("controls/gtoolbarcombobox.lua")
-include ("controls/gtoolbarseparator.lua")
-include ("controls/gtoolbarsplitbutton.lua")
+	function()
+		-- Controls
+		include ("gooey/ui/controls/gbutton.lua")
+		include ("gooey/ui/controls/gcheckbox.lua")
+		include ("gooey/ui/controls/gcombobox.lua")
+		include ("gooey/ui/controls/gcomboboxitem.lua")
+		include ("gooey/ui/controls/gcomboboxx.lua")
+		include ("gooey/ui/controls/gcontainer.lua")
+		include ("gooey/ui/controls/geditablelabel.lua")
+		include ("gooey/ui/controls/gframe.lua")
+		include ("gooey/ui/controls/ggraph.lua")
+		include ("gooey/ui/controls/ggroupbox.lua")
+		include ("gooey/ui/controls/ghtml.lua")
+		include ("gooey/ui/controls/glabel.lua")
+		include ("gooey/ui/controls/glabelx.lua")
+		include ("gooey/ui/controls/gmenustrip.lua")
+		include ("gooey/ui/controls/gmenustripitem.lua")
+		include ("gooey/ui/controls/gmodelchoice.lua")
+		include ("gooey/ui/controls/gpanel.lua")
+		include ("gooey/ui/controls/gpanellist.lua")
+		include ("gooey/ui/controls/gprogressbar.lua")
+		include ("gooey/ui/controls/gresizegrip.lua")
+		include ("gooey/ui/controls/gscrollbarbutton.lua")
+		include ("gooey/ui/controls/gscrollbarcorner.lua")
+		include ("gooey/ui/controls/gscrollbargrip.lua")
+		include ("gooey/ui/controls/gsplitcontainer.lua")
+		include ("gooey/ui/controls/gsplitcontainersplitter.lua")
+		include ("gooey/ui/controls/gstatusbar.lua")
+		include ("gooey/ui/controls/gstatusbarcombobox.lua")
+		include ("gooey/ui/controls/gstatusbarpanel.lua")
+		include ("gooey/ui/controls/gstatusbarcomboboxpanel.lua")
+		include ("gooey/ui/controls/gtabcontrol.lua")
+		include ("gooey/ui/controls/gtextentry.lua")
+		include ("gooey/ui/controls/gtoolbar.lua")
+		include ("gooey/ui/controls/gtreeviewnode.lua")
+		include ("gooey/ui/controls/gtreeview.lua")
+		include ("gooey/ui/controls/gurllabel.lua")
+		include ("gooey/ui/controls/gworldview.lua")
+		include ("gooey/ui/controls/gverticallayout.lua")
 
--- Dialogs
-include ("dialogs/dialogkeyboardmap.lua")
-include ("dialogs/simplebuttondialog.lua")
+		include ("gooey/ui/controls/gvpanel.lua")
+		include ("gooey/ui/controls/gclosebutton.lua")
+		include ("gooey/ui/controls/gimage.lua")
+		include ("gooey/ui/controls/gtab.lua")
+		include ("gooey/ui/controls/gtabheader.lua")
+		include ("gooey/ui/controls/gtoolbaritem.lua")
+		include ("gooey/ui/controls/gtoolbarbutton.lua")
+		include ("gooey/ui/controls/gtoolbarcombobox.lua")
+		include ("gooey/ui/controls/gtoolbarseparator.lua")
+		include ("gooey/ui/controls/gtoolbarsplitbutton.lua")
+	end,
 
--- Glyphs
-include ("glyphs.lua")
-include ("glyphs/close.lua")
-include ("glyphs/down.lua")
-include ("glyphs/up.lua")
+	function()
+		-- Dialogs
+		include ("gooey/ui/dialogs/dialogkeyboardmap.lua")
+		include ("gooey/ui/dialogs/simplebuttondialog.lua")
+
+		-- Glyphs
+		include ("gooey/ui/glyphs.lua")
+		include ("gooey/ui/glyphs/close.lua")
+		include ("gooey/ui/glyphs/down.lua")
+		include ("gooey/ui/glyphs/up.lua")
+	end,
+}
+
+for _, piece in ipairs (pieces) do
+	GLib.CallDelayed (piece, 0.025)
+end
