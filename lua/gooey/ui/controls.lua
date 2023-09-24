@@ -200,5 +200,5 @@ local pieces = {
 }
 
 for _, piece in ipairs (pieces) do
-	GLib.CallDelayed (piece, 0.025)
+	GLib.CallDelayed (piece)
 end
