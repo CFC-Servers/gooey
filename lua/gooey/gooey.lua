@@ -1,10 +1,13 @@
 if Gooey then return end
 Gooey = Gooey or {}
 
+local t = GLib.LoadTimer ("Gooey")
+
 GLib.Initialize ("Gooey", Gooey)
 GLib.AddCSLuaPackSystem ("Gooey")
 GLib.AddCSLuaPackFile ("autorun/gooey.lua")
 GLib.AddCSLuaPackFolderRecursive ("gooey")
+t.step ("Init")
 
 function Gooey.DeprecatedFunction ()
 	GLib.Error ("Gooey: Derma function should not be called.")
@@ -59,8 +62,11 @@ if CLIENT then
 		)
 	end
 
+	t.step ("Step 1")
+
 	include ("clipboard.lua")
 	include ("rendercontext.lua")
+	t.step ("Step 2")
 
 	include ("interpolators/timeinterpolator.lua")
 	include ("interpolators/normalizedtimeinterpolator.lua")
@@ -70,9 +76,11 @@ if CLIENT then
 	include ("interpolators/liveadditiveinterpolator.lua")
 	include ("interpolators/livelinearinterpolator.lua")
 	include ("interpolators/livesmoothinginterpolator.lua")
+	t.step ("Step 3")
 
 	if GetConVar("is_gcompute_user"):GetBool() then
 		include ("ui/controls.lua")
+		t.step ("Step 3")
 	end
 end
 
@@ -82,3 +90,5 @@ Gooey.CodeExporter:AddAuxiliarySystemName ("GLib")
 Gooey:DispatchEvent ("Initialize")
 
 Gooey.AddReloadCommand ("gooey/gooey.lua", "gooey", "Gooey")
+
+t.step ("Step 4")
