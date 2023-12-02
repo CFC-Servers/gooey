@@ -179,7 +179,7 @@ function PANEL:Init ()
 		end
 	)
 	
-	self:SetItemHeight (20)
+	self:SetItemHeight (30)
 	self:SetKeyboardMap (Gooey.ListView.KeyboardMap)
 	self:SetCanFocus (true)
 end

@@ -15,6 +15,7 @@ Gooey.ListView.Column = Gooey.MakeConstructor (self)
 			Fired when this column's width has changed.
 ]]
 
+surface.CreateFont( "GListViewColumnHeaderFont", { font = "Roboto", size = 16, weight = 600, antialias = true } )
 function self:ctor (columnCollection, id)
 	self.ColumnCollection = columnCollection
 	self.ListView = self.ColumnCollection:GetListView ()
@@ -47,6 +48,7 @@ function self:ctor (columnCollection, id)
 	self.Header = vgui.Create ("GListViewColumnHeader", self.ListView:GetHeader ())
 	self.Header:SetColumn (self)
 	self.Header:SetWide (self.Width)
+	self.Header:SetFont("GListViewColumnHeaderFont")
 	
 	self:UpdateHeaderAlignment ()
 	self:HookHeader (self.Header)

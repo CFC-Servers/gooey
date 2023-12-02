@@ -139,7 +139,7 @@ function PANEL:Paint (w, h)
 		x = x + self.Image:GetWidth () + 4
 	end
 	
-	surface.SetFont ("DermaDefault")
+	surface.SetFont (self:GetFont() or "DermaDefault")
 	local _, textHeight = surface.GetTextSize (self:GetText ())
 	surface.SetTextColor (GLib.Colors.Black)
 	surface.SetTextPos (x, (h - textHeight) * 0.5)

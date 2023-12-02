@@ -9,14 +9,14 @@ Gooey.SaveController = Gooey.MakeConstructor (self, Gooey.ButtonController)
 
 function self:ctor (savable)
 	self.Savable = nil
-	
+
 	self:RegisterAction ("Save", "CanSaveChanged")
-	
+
 	-- Event handlers
 	self.CanSaveChanged = function ()
 		self:UpdateSaveState ()
 	end
-	
+
 	self:SetSavable (savable)
 end
 
@@ -40,9 +40,9 @@ function self:SetSavable (savable)
 	if self.Savable then
 		self.Savable:RemoveEventListener ("CanSaveChanged", "Gooey.SaveController." .. self:GetHashCode ())
 	end
-	
+
 	self.Savable = savable
-	
+
 	if self.Savable then
 		self.Savable:AddEventListener ("CanSaveChanged", "Gooey.SaveController." .. self:GetHashCode (), self.CanSaveChanged)
 	end
