@@ -1,4 +1,4 @@
-local _R = debug.getregistry ()
+local PanelMeta = FindMetaTable ("Panel")
 
 local self = {}
 
@@ -98,14 +98,14 @@ end
 
 -- Text
 function self:GetText ()
-	return _R.Panel.GetText (self)
+	return PanelMeta.GetText (self)
 end
 
 function self:SetText (text)
 	if self:GetText () == text then return self end
 	
 	self.Text = text
-	_R.Panel.SetText (self, text)
+	PanelMeta.SetText (self, text)
 	
 	self:DispatchEvent ("TextChanged", self.Text)
 	
@@ -167,7 +167,7 @@ end
 
 -- Compatibility with spawn menu hooks
 function self:HasParent (control)
-	return _R.Panel.HasParent (self, control)
+	return PanelMeta.HasParent (self, control)
 end
 
 -- Event handlers

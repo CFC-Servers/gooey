@@ -1,4 +1,4 @@
-local _R = debug.getregistry ()
+local PanelMeta = FindMetaTable ("Panel")
 
 local PANEL = {}
 
@@ -73,7 +73,7 @@ function PANEL:GetPopulator ()
 end
 
 function PANEL:InvalidateLayout ()
-	if not self.ShouldSuppressLayout then _R.Panel.InvalidateLayout (self) end
+	if not self.ShouldSuppressLayout then PanelMeta.InvalidateLayout (self) end
 end
 
 function PANEL:LayoutRecursive ()
