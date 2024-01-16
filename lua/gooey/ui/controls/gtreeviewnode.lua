@@ -1,11 +1,13 @@
 local PANEL = {}
 
+surface.CreateFont("GTreeViewNodeFont", { font = "Roboto", size = 15, weight = 500, antialias = true } )
 function PANEL:Init ()
 	self.TreeView = nil
 	self.Id = "Unknown"
 
 	-- Code copied from DTree_Node
 	self.Label = vgui.Create ("DTree_Node_Button", self)
+	self.Label:SetFont("GTreeViewNodeFont")
 	self.Label.DoClick = function () self:InternalDoClick () end
 	self.Label.DoDoubleClick = function () self:InternalDoClick () end
 	self.Label.DoRightClick = function () self:InternalDoRightClick () end

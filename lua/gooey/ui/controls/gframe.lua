@@ -75,9 +75,9 @@ end
 -- Based off SKIN:PaintFrame () in skins/default.lua
 function self:Paint (w, h)
 	if self.m_bPaintShadow then
-		surface.DisableClipping (true)
+		DisableClipping (true)
 		self:GetSkin ().tex.Shadow (-4, -4, w + 10, h + 10)
-		surface.DisableClipping (false)
+		DisableClipping (false)
 	end
 	
 	if self:IsActive () then

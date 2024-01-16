@@ -125,17 +125,19 @@ function PANEL:SetIcon (icon)
 	self.Icon = icon
 end
 
+surface.CreateFont( "GListViewItemFont", { font = "Roboto", size = 18, weight = 500, antialias = true } )
 function PANEL:SetColumnText (columnIdOrIndex, text)
 	local column = self:GetListView ():GetColumns ():GetColumnByIdOrIndex (columnIdOrIndex)
 	if not column then return end
-	
+
 	local columnId = column:GetId ()
-	
+
 	if not self.Columns [columnId] then
 		self.Columns [columnId] = vgui.Create ("GLabel", self)
 		self.Columns [columnId]:SetTextInset (5, 0)
 		self.Columns [columnId]:SetTextColor (GLib.Colors.Black)
 	end
+	self.Columns [columnId]:SetFont ("GListViewItemFont")
 	self.Columns [columnId]:SetText (text)
 end
 

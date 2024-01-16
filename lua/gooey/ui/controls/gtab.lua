@@ -15,12 +15,14 @@ Gooey.Tab = Gooey.MakeConstructor (self)
 			Fired when this tab's visibility has changed.
 ]]
 
+surface.CreateFont ("GTabHeaderFont", { font = "Tahoma", size = 14, weight = 500, antialias = true })
 function self:ctor ()
 	self.TabControl = nil
 	
 	self.Visible = true
 	
 	self.Header = vgui.Create ("GTabHeader")
+	self.Header:SetFont ("GTabHeaderFont")
 	self.Header:SetTab (self)
 	self.Header:SetVisible (false)
 	self.Contents = nil

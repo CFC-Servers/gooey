@@ -3,12 +3,12 @@
 function PANEL:Init ()
 	self.Items = {}
 	self.ItemsById = {}
-	
+
 	self.HoveredItem = nil
 	self:SetTall (28)
-	
+
 	self.MouseCaptured = false
-	
+
 	self.VPanelContainer = Gooey.VPanelContainer (self)
 end
 
@@ -16,7 +16,7 @@ function PANEL:AddButton (text, callback)
 	local button = Gooey.ToolbarButton (text, callback)
 	self.VPanelContainer:AddControl (button)
 	button:SetId (text)
-	
+
 	self.Items [#self.Items + 1] = button
 	self.ItemsById [button:GetId ()] = button
 	
@@ -26,9 +26,9 @@ end
 function PANEL:AddComboBox ()
 	local comboBox = Gooey.ToolbarComboBox ()
 	self.VPanelContainer:AddControl (comboBox)
-	
+
 	self.Items [#self.Items + 1] = comboBox
-	
+
 	return comboBox:GetComboBox ()
 end
 
