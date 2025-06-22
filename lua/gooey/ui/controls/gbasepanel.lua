@@ -646,7 +646,6 @@ end
 
 self.GetColor     = Gooey.DeprecatedFunctionFactory ("Panel:GetTextColor")
 self.HasFocus     = Gooey.DeprecatedFunctionFactory ("Panel:IsFocused"   )
-self.HasParent    = Gooey.DeprecatedFunctionFactory ("Panel:Contains"    )
 self.RequestFocus = Gooey.DeprecatedFunctionFactory ("Panel:Focus"       )
 self.SetColor     = Gooey.DeprecatedFunctionFactory ("Panel:SetTextColor")
 self.SetDisabled  = Gooey.DeprecatedFunctionFactory ("Panel:SetEnabled"  )
